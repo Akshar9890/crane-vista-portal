@@ -17,24 +17,38 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Industrial crane service colors */
+    --primary: 220 91% 18%;  /* Deep industrial blue */
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 220 91% 25%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 38 92% 50%;  /* Construction orange */
+    --secondary-foreground: 0 0% 98%;
+    --secondary-hover: 38 92% 45%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 13% 91%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 220 13% 91%;
+    --accent-foreground: 220 91% 18%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 91% 18%;
+
+    /* Custom design tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(220 91% 18%), hsl(220 91% 25%));
+    --gradient-secondary: linear-gradient(135deg, hsl(38 92% 50%), hsl(38 92% 45%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 13% 96%));
+    
+    --shadow-industrial: 0 25px 50px -12px hsl(220 91% 18% / 0.25);
+    --shadow-card: 0 4px 6px -1px hsl(220 91% 18% / 0.1), 0 2px 4px -1px hsl(220 91% 18% / 0.06);
+    --shadow-glow: 0 0 40px hsl(38 92% 50% / 0.3);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
 
