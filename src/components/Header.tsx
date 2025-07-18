@@ -26,13 +26,13 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navigation.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
+                onClick={() => document.getElementById(item.href.substring(1))?.scrollIntoView({ behavior: 'smooth' })}
                 className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
               >
                 {item.name}
-              </a>
+              </button>
             ))}
           </nav>
 
@@ -42,7 +42,11 @@ const Header = () => {
               <Phone className="h-4 w-4" />
               <span>+1 (555) 123-4567</span>
             </div>
-            <Button variant="hero" size="sm">
+            <Button 
+              variant="hero" 
+              size="sm"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Get Quote
             </Button>
           </div>
@@ -61,14 +65,16 @@ const Header = () => {
           <div className="md:hidden py-4 border-t border-border">
             <nav className="flex flex-col space-y-4">
               {navigation.map((item) => (
-                <a
+                <button
                   key={item.name}
-                  href={item.href}
-                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    document.getElementById(item.href.substring(1))?.scrollIntoView({ behavior: 'smooth' });
+                    setIsMenuOpen(false);
+                  }}
+                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium text-left"
                 >
                   {item.name}
-                </a>
+                </button>
               ))}
             </nav>
             <div className="mt-4 pt-4 border-t border-border">
@@ -76,7 +82,15 @@ const Header = () => {
                 <Phone className="h-4 w-4" />
                 <span>+1 (555) 123-4567</span>
               </div>
-              <Button variant="hero" size="sm" className="w-full">
+              <Button 
+                variant="hero" 
+                size="sm" 
+                className="w-full"
+                onClick={() => {
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  setIsMenuOpen(false);
+                }}
+              >
                 Get Quote
               </Button>
             </div>

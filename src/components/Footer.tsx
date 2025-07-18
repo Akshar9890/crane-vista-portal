@@ -60,13 +60,13 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <nav className="space-y-2">
               {quickLinks.map((link) => (
-                <a
+                <button
                   key={link.name}
-                  href={link.href}
-                  className="block text-primary-foreground/80 hover:text-secondary transition-colors duration-200"
+                  onClick={() => document.getElementById(link.href.substring(1))?.scrollIntoView({ behavior: 'smooth' })}
+                  className="block text-primary-foreground/80 hover:text-secondary transition-colors duration-200 text-left"
                 >
                   {link.name}
-                </a>
+                </button>
               ))}
             </nav>
           </div>

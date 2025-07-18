@@ -114,11 +114,27 @@ const CraneTypes = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-2 pt-4">
-                  <Button variant="default" size="sm" className="flex-1">
+                  <Button 
+                    variant="default" 
+                    size="sm" 
+                    className="flex-1"
+                    onClick={() => {
+                      // Scroll to contact form for detailed consultation
+                      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                  >
                     <Eye className="h-4 w-4 mr-2" />
                     View Details
                   </Button>
-                  <Button variant="outline" size="sm" className="flex-1">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="flex-1"
+                    onClick={() => {
+                      // In a real application, this would download a PDF brochure
+                      alert(`${crane.name} brochure download will be available soon!`);
+                    }}
+                  >
                     <Download className="h-4 w-4 mr-2" />
                     Brochure
                   </Button>
@@ -137,7 +153,11 @@ const CraneTypes = () => {
             Our experts will help you select the perfect crane for your project requirements. 
             Contact us for a personalized consultation.
           </p>
-          <Button variant="hero" size="lg">
+          <Button 
+            variant="hero" 
+            size="lg"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             Get Expert Consultation
           </Button>
         </div>
